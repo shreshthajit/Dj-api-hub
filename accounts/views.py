@@ -46,7 +46,7 @@ def logout_view(request):
 
 @login_required
 def home(request):
-       return render(request, 'home.html', {'user': request.user})
+       return render(request, 'accounts/home.html', {'user': request.user})
 
 def check_login(request):
        return render(request, 'accounts/check_login.html', {'is_authenticated': request.user.is_authenticated})

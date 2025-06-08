@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order #{{ order.id }}</title>
+</head>
+<body>
+    <h1>Order #{{ order.id }}</h1>
+    <p>Status: {{ order.status }}</p>
+    <p>Total: ${{ order.total_price }}</p>
+    <h2>Items</h2>
+    <ul>
+        {% for item in order.items.all %}
+            <li>{{ item.book.title }} - {{ item.quantity }} x ${{ item.price }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'book_list' %}">Back to Books</a></p>
+</body>
+</html>
